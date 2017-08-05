@@ -37,7 +37,12 @@ public class Practice01ClipRectView extends View {
 
         int left = (getWidth() - bitmap.getWidth()) / 2;
         int top = (getHeight() - bitmap.getHeight()) / 2;
+        int right = (getWidth() + bitmap.getWidth()) / 2;
+        int bottom = (getHeight() + bitmap.getHeight()) / 2;
 
+        canvas.save();
+        canvas.clipRect(left + 50, top + 50, right - 50, bottom - 50);
         canvas.drawBitmap(bitmap, left, top, paint);
+        canvas.restore();
     }
 }
